@@ -2,6 +2,7 @@
   "name": "react-ts-fe",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://127.0.0.1:8000/",
   "dependencies": {
     "@cloudscape-design/components": "^3.0.158",
     "@cloudscape-design/global-styles": "^1.0.6",

@@ -15,3 +15,12 @@ def api_record(request):
     {"records": records},
     encoder=HealthRecordEncoder
   )
+
+@require_http_methods(["GET"])
+def api_latest_record(request):
+  # refactor to consider using SQL or different logic
+  latest_records = HealthRecord.objects.order_by('-date')
+  return JsonResponse(
+    {"records": latest_records[0]},
+    encoder=HealthRecordEncoder
+  )
