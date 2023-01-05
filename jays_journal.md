@@ -8,7 +8,7 @@ Calendar manipulation
 deployment
 web scraping?
 
-# Tech Stack
+# Tech Stack 
 Front End:
 React, Redux, TypeScript
 
