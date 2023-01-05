@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Is AD Healthy?</h1>
+        <h1>Is AD Healthy Today?</h1>
       </header>
       <CurrentStatus />
       <PastStatus />

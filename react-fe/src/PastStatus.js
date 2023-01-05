@@ -9,6 +9,7 @@ const PastStatus = () => {
 
   const [searchDate, setSearchDate] = useState(parseDate);
   const [records, setRecords] = useState([]);
+  const clickedRecord = records.find(({ date }) => date == searchDate);
 
   useEffect(() => {
     async function getRecords() {
@@ -23,6 +24,11 @@ const PastStatus = () => {
     getRecords();
   }, []);
 
+  function dateFilter(date) {
+    const dateString = date.toISOString().split("T")[0];
+    // object destruction below:
+    return records.find(({ date }) => date == dateString);
+  }
   return (
     <div className="past-status">
       <FormField label="Search date">
@@ -44,7 +50,15 @@ const PastStatus = () => {
         nextMonthAriaLabel="Next month"
         previousMonthAriaLabel="Previous month"
         todayAriaLabel="Today"
+        isDateEnabled={dateFilter}
       />
+      {clickedRecord && (
+        <ul>
+          <li>Is healthy: {clickedRecord.healthy ? "Yes" : "No"}</li>
+          <li>Injury location: {clickedRecord.type}</li>
+          <li>Date Selected: {clickedRecord.date}</li>
+        </ul>
+      )}
     </div>
   );
 };

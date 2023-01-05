@@ -1,5 +1,12 @@
 # timetable
-4 hours
+4 hours - 1/2/2023
+Finished react setup
+Finished backend endpoints
+
+Todo still:
+Calendar manipulation
+deployment
+web scraping?
 
 # Tech Stack
 Front End:
@@ -10,19 +17,24 @@ Django, Python, PostgreSQL
 
 GitHub 
 
-
 ## backend planning
 
+## API's:
+/api/records/ - get all the health data points
+/api/records/today - single record about last record point
 
-API:
+## Version control notes
+- don't version control .venv
+- setup the appropriate dependencies using requirements.txt
 
-restful API:
-/api/health/ get all the health data points
-/api/health/1 get a single data point
+```
+pip freeze > requirements.txt
+
+pip install -r requirements.txt
+```
 
 
-
-# Django
+# Django notes
 - install django project
 - install django app
   - register config of app to settings.py
@@ -56,3 +68,9 @@ DATABASES = {
 - setup URLS in projects, then AP
 
 ### Web scraping
+
+
+
+## Lessons
+- .venv is typically in gitignore
+- .venv analogous to node modulues, and requiremenets.txt is analogous to package.json.
